@@ -1,3 +1,18 @@
+'''
+==========================================================
+Pre-requisite on RaspberryPi
+open terminal
+sudo raspi-config > 3 Interface Options > P5 I2C > Enable Yes > Finish
+sudo vi /etc/modules
+  --> add 'i2c-dev' at the last line
+
+sudo apt-get install i2c-tools
+sudo apt-get install python-smbus
+sudo i2cdetect -y 1
+  --> you can see 68 (MPU6050 address) on the screen
+==========================================================
+'''    
+
 import smbus
 import math
 import time
